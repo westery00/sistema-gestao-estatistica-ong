@@ -20,7 +20,11 @@
 Organizações não-governamentais (ONGs) de proteção animal frequentemente enfrentam grandes gargalos operacionais devido à descentralização de dados. O controle manual ou fragmentado de doadores (pessoas físicas e jurídicas), entradas de insumos (ração, medicamentos, produtos de limpeza) e a distribuição para animais resgatados geram perdas de insumos, falta de previsibilidade de estoque e dificuldade na prestação de contas para parceiros e doadores.
 
 ### A Solução
-O **Instituto Eu Sou o Bicho** é um sistema integrado de gestão e inteligência de dados desenvolvido em planilha eletrônica avançada (Excel / Google Planilhas). A solução simula um modelo de banco de dados relacional por meio de chaves padronizadas, automatiza o fluxo operacional de ponta a ponta e aplica rigorosos conceitos de **Estatística Descritiva e Probabilidade** para transformar dados transacionais em insights estratégicos para a diretoria da ONG.
+O **Sistema de Gestão de Doações** para o **Instituto Eu Sou o Bixo** é um ecossistema completo de gestão e inteligência de dados dividido em duas camadas integradas:
+1. **Camada Transacional e Estatística (Excel / Google Planilhas):** Simula um banco de dados relacional por meio de chaves padronizadas, automatiza o controle operacional e aplica conceitos de Estatística Descritiva e Probabilidade diretamente na base.
+2. **Camada de Business Intelligence (Power BI):** Consome os dados estruturados da planilha, aplica modelagem semântica com medidas **DAX** e entrega dashboards interativos para análise executiva e evolução temporal das arrecadações.
+
+---.
 
 ---
 
@@ -30,18 +34,22 @@ Para garantir a integridade referencial sem a necessidade de um SGBD tradicional
 
 ### Convenção de Chaves (IDs Padronizados)
 * **`DOR-`** ➔ Doadores (Pessoas Físicas e Jurídicas)
-* **`BEN-`** ➔ Beneficiários / Animais e Setores de Abrigo
 * **`PRO-`** ➔ Produtos e Insumos do Catálogo
 * **`DOA-`** ➔ Doações (Entradas e Registro de Suprimentos)
-* **`DIS-`** ➔ Distribuições (Saídas e Consumo Interno)
 
 ```mermaid
-graph TD
-    A[Doadores (DOR-)] -->|Registra| C[Doações (DOA-)]
-    B[Produtos (PRO-)] -->|Categoriza| C
-    B -->|Controla Estoque| D[Distribuições (DIS-)]
-    C -->|Atualiza Saldo| E[Painel de Controle & Estatísticas]
-    D -->|Baixa de Estoque| E
+graph LR
+    subgraph Camada Operacional [Excel / Google Planilhas]
+        A[Doadores DOR-] -->|Chave Estrangeira| C[Doações DOA-]
+        B[Produtos PRO-] -->|Chave Estrangeira| C
+        B -->|Chave Estrangeira| D[Distribuições DIS-]
+        C & D --> E[Estatística & Controle de Estoque]
+    end
+    subgraph Camada Analítica [Microsoft Power BI]
+        C -->|ETL / Power Query| F[Modelo Semântico tbl_Doacoes]
+        F --> G[Medidas DAX]
+        G --> H[Dashboard: Visão Geral & Análise Temporal]
+    end
 ```
 
 ---
