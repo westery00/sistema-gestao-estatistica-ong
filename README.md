@@ -68,9 +68,7 @@ O sistema é modularizado em abas funcionais que cobrem toda a cadeia de suprime
 2. **`Doadores`**: Gestão cadastral unificada (PF/PJ), com contagem automatizada e análise de frequência relativa de contribuição.
 3. **`Produtos`**: Catálogo categorizado de itens com controle dinâmico de estoque mínimo e alertas visuais de criticidade (*Baixo* / *Esgotado*).
 4. **`Doações`**: Registro granular de entradas de insumos, contabilização de volumes e cruzamento com a tipologia dos doadores.
-5. **`Beneficiários`**: Cadastro estruturado dos animais e setores assistidos pela instituição.
-6. **`Distribuições`**: Controle rigoroso de saídas e consumo de produtos no abrigo.
-7. **`Painel Executivo`**: Dashboard central com indicadores-chave de desempenho (KPIs) e análises probabilísticas atualizadas em tempo real.
+5. **`Painel Executivo`**: Dashboard central com indicadores-chave de desempenho (KPIs) e análises probabilísticas atualizadas em tempo real.
 
 ---
 
