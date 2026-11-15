@@ -20,7 +20,7 @@
 Organizações não-governamentais (ONGs) de proteção animal frequentemente enfrentam grandes gargalos operacionais devido à descentralização de dados. O controle manual ou fragmentado de doadores (pessoas físicas e jurídicas), entradas de insumos (ração, medicamentos, produtos de limpeza) e a distribuição para animais resgatados geram perdas de insumos, falta de previsibilidade de estoque e dificuldade na prestação de contas para parceiros e doadores.
 
 ### A Solução
-O **Sistema de Gestão de Doações** para o **Instituto Eu Sou o Bixo** é um ecossistema completo de gestão e inteligência de dados dividido em duas camadas integradas:
+O **Sistema de Gestão de Doações** para o **Instituto Eu Sou o Bicho** é um ecossistema completo de gestão e inteligência de dados dividido em duas camadas integradas:
 1. **Camada Transacional e Estatística (Excel / Google Planilhas):** Simula um banco de dados relacional por meio de chaves padronizadas, automatiza o controle operacional e aplica conceitos de Estatística Descritiva e Probabilidade diretamente na base.
 2. **Camada de Business Intelligence (Power BI):** Consome os dados estruturados da planilha, aplica modelagem semântica com medidas **DAX** e entrega dashboards interativos para análise executiva e evolução temporal das arrecadações.
 
